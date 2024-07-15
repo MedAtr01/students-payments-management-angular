@@ -12,9 +12,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+
   }
 
-  title = 'ui-angular';
+  title = 'payments-management';
 
 }
