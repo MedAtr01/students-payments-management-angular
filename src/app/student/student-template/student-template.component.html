@@ -43,7 +43,9 @@
       <mat-divider></mat-divider>
       <div class="d-flex align-items-center">
         <button mat-icon-button routerLink="profile">
-          <img [src]="'data:image/jpeg;base64,' + student.profile!" class="rounded-circle">
+          <img
+            [src]="student.profile ?'data:image/jpeg;base64,' + student.profile:'https://www.w3schools.com/howto/img_avatar.png'"
+            class="rounded-circle">
         </button>
         <button mat-button class="mb-0">{{ student.fullName }}</button>
       </div>
