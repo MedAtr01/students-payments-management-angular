@@ -1,0 +1,74 @@
+<div class="d-flex mb-2 pb-0 flex-column">
+
+  <span class="spacer flex-grow-1"></span>
+  <app-search-box class="d-md-none mt-3"></app-search-box>
+
+
+</div>
+
+<mat-card>
+  <mat-card-header class="d-flex justify-content-center align-items-center">
+    <mat-card-title>
+      Students
+    </mat-card-title>
+    <div class="d-flex flex-grow-1"></div>
+
+    <div style="font-size: 8px">
+
+    </div>
+
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="table-container">
+      <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+        <ng-container matColumnDef="profile">
+          <th class="p-2" mat-sort-header mat-header-cell *matHeaderCellDef> Profile</th>
+          <td class="border-0 p-2" mat-cell *matCellDef="let element">
+            <a>
+              <img
+                [src]="element.profile ? 'data:image/jpeg;base64,' + element.profile :'https://www.w3schools.com/howto/img_avatar.png'"
+                class="rounded-circle profile-img-link " width="60px" height="60px"
+                alt="{{element.fullName.at(0)}}" (click)="handleStudentDetails(element.studentCode)">
+            </a>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fullname">
+          <th class="p-2" mat-sort-header mat-header-cell *matHeaderCellDef> Name</th>
+          <td class="border-0 p-2" mat-cell *matCellDef="let element"> {{ element.fullName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="studentCode">
+          <th class="p-2" mat-sort-header mat-header-cell *matHeaderCellDef> Code</th>
+          <td class="border-0 p-2" mat-cell *matCellDef="let element"> {{ element.studentCode }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="program">
+          <th class="p-2" mat-sort-header mat-header-cell *matHeaderCellDef> Program</th>
+          <td class="border-0 p-2" mat-cell *matCellDef="let element"> {{ element.program }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th class="p-2" mat-sort-header mat-header-cell *matHeaderCellDef> Email</th>
+          <td class="border-0 p-2" mat-cell *matCellDef="let element"> {{ element.user?.email || 'not Existing ' }}</td>
+        </ng-container>
+        <ng-container matColumnDef="payments">
+
+          <th class="p-2" mat-header-cell *matHeaderCellDef id="thId">
+            Payments
+          </th>
+          <td class="border-0 p-2 " mat-cell *matCellDef="let element">
+
+            <button mat-icon-button color="primary" (click)="handleStudentPayments(element.studentCode)">
+              <mat-icon>receipt</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[6]"></mat-paginator>
+  </mat-card-content>
+</mat-card>

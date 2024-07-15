@@ -1,0 +1,18 @@
+<div class="d-flex flex-row align-items-center">
+  <div
+    class="search-box-container col-10 me-1 " [@toggleSearchBox]="searchBoxState">
+
+    <mat-form-field appearance="outline" color="primary" class="mt-auto  ">
+      <mat-label class="text-light">Search</mat-label>
+      <input matInput (keyup)="onSearch($event)">
+      <button mat-icon-button matSuffix color="primary">
+        <mat-icon>search</mat-icon>
+      </button>
+
+    </mat-form-field>
+  </div>
+  <button mat-icon-button class="ms-auto" color="primary"
+          (click)="triggerSearchBox()">
+    <mat-icon class="fw-bold fs-3 mat-primary">{{ searchBoxState === 'closed' ? 'search' : 'close' }}</mat-icon>
+  </button>
+</div>

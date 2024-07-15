@@ -1,0 +1,74 @@
+<div class="registration-container">
+
+  <mat-card color="accent" class="mat-elevation-z24">
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage.length">
+      <p *ngFor="let msg of errorMessage">{{ msg }}</p>
+    </div>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>person_add</mat-icon>
+        Student Registration
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="registrationForm">
+        <mat-form-field>
+          <mat-label>Enter your name</mat-label>
+          <input matInput type="text" formControlName="fullName">
+          <button mat-icon-button matPrefix>
+            <mat-icon>account_circle</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your student code</mat-label>
+          <input matInput type="text" formControlName="studentCode">
+          <button mat-icon-button matPrefix>
+            <mat-icon>code</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your program</mat-label>
+          <input matInput type="text" formControlName="program">
+          <button mat-icon-button matPrefix>
+            <mat-icon>school</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your email</mat-label>
+          <input matInput type="text" #email formControlName="email">
+          <button mat-icon-button matPrefix>
+            <mat-icon>mail</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your username</mat-label>
+          <input matInput type="text" formControlName="username" readonly [value]="this.email.value">
+          <button mat-icon-button matPrefix disabled>
+            <mat-icon>person</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matPrefix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()"
+        >Register
+        </button>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="mt-2 ms-3">
+        Already registred?&nbsp;
+        <a type="button" routerLink="/login" class="link-primary">
+          Sign in
+        </a>
+
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>

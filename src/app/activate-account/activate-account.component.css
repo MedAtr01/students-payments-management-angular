@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+•activate-message, activate-error {
+  text-align: center;
+}
+
+code-input {
+  color: white;
+}
+
+•activate-error {
+  color: red;
+}

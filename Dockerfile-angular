@@ -1,0 +1,15 @@
+FROM node:20-alpine AS build-stage
+WORKDIR /ui-angular
+COPY package*.json ./
+RUN npm ci
+COPY . ./
+RUN npm run build -- --configuration production
+RUN cd dist/ui-angular/browser && chmod +x *
+
+FROM nginx:alpine
+
+COPY --from=build-stage /ui-angular/dist/ui-angular/browser/ /usr/local/var/www
+
+
+COPY nginx.conf /etc/nginx/nginx.conf
+USER nginx

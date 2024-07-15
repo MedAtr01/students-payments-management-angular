@@ -1,0 +1,43 @@
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100dvh;
+  /*background: var(--mat-app-background-color);*/
+}
+
+mat-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 60px;
+
+
+}
+
+mat-card-title, mat-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  color: var(--bs-light);
+
+
+}
+
+button mat-icon {
+  font-size: 24px;
+  color: var(--bs-secondary);
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.mat-mdc-form-field {
+  width: 100%;
+}

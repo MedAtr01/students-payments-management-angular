@@ -1,0 +1,119 @@
+<div class="px-5 ms-5 mb-5">
+</div>
+<div class="container profile-container d-flex  flex-column flex-md-row col-md-10">
+  <div class="image-container d-flex">
+    <form [formGroup]="profileGroup" enctype="multipart/form-data">
+      <label class="hoverable" for="fileInput">
+        <img *ngIf="student.profile && !url else defaultImage"
+             [src]="student.profile ? 'data:image/jpeg;base64,' +student.profile : url?url:'https://www.w3schools.com/howto/img_avatar.png'"
+        >
+        <ng-template #defaultImage>
+          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+        </ng-template>
+        <div class="background"></div>
+      </label>
+      <br/>
+
+      <input
+        id="fileInput"
+        type="file"
+        name="profile"
+
+        formControlName="profile"
+        class="select-profile-picture"
+        (change)="onSelectFile($event)"
+      />
+
+    </form>
+    <div class="d-flex flex-column">
+    <span><button mat-icon-button color="primary">
+  <mat-icon matSuffix>edit</mat-icon>
+</button>
+      </span>
+      <button mat-icon-button color="warn" *ngIf="url" (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" *ngIf="url" (click)="updateProfile()">
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="user-info  p-2 ms-md-5 mt-2 d-flex flex-column align-content-center ">
+    <div>
+      <h2>{{ fullName.value }}</h2>
+      <h4>{{ studentCode.value }}</h4>
+    </div>
+    <div>
+      <button mat-flat-button color="primary" (click)="openDialog()">
+        <mat-icon>lock</mat-icon>
+        change password
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div class="mt-5 ms-auto update-info col-md-10 mx-auto ">
+  <form [formGroup]="updateGroup">
+
+    <div class="row">
+
+      <mat-form-field class="col-12">
+        <mat-label>Full name</mat-label>
+        <input matInput type="text" #fullName formControlName="fullName">
+        <button mat-icon-button matPrefix>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-12 col-md-6">
+        <mat-label> student code</mat-label>
+        <input [value]="student.studentCode" matInput type="text" #studentCode formControlName="studentCode">
+        <button mat-icon-button matPrefix>
+          <mat-icon>code</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="col-12 col-md-6">
+        <mat-label> program</mat-label>
+        <input [value]="student.program" matInput type="text" formControlName="program">
+        <button mat-icon-button matPrefix>
+          <mat-icon>school</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-12 col-md-6">
+        <mat-label> email</mat-label>
+        <input matInput [value]="student.user?.email" type="text" formControlName="email">
+        <button mat-icon-button matPrefix>
+          <mat-icon>mail</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="col-12 col-md-6">
+        <mat-label>Username</mat-label>
+        <input [value]="student.user?.username" matInput type="text" formControlName="username">
+        <button mat-icon-button matPrefix>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-form-field>
+
+
+    </div>
+    <br>
+    <div class=" d-flex flex-row align-content-end">
+      <span style="flex: auto"></span>
+
+      <button mat-button color="primary" class="fs-6" type="submit" (click)="updateInfo()">
+        <mat-icon>save</mat-icon>
+        SAVE
+      </button>
+    </div>
+  </form>
+
+</div>
+
+
+

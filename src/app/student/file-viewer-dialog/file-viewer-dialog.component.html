@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <ng-container *ngIf="data.fileType.includes('pdf'); else imageTemplate">
+    <iframe [src]="safeFileUrl" class="col-12 col-md-8"></iframe>
+  </ng-container>
+  <ng-template #imageTemplate>
+    <img [src]="safeFileUrl" alt="File" width="80%" height="100%">
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

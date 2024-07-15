@@ -1,0 +1,18 @@
+.header {
+  background: rgba(35, 38, 44, 0.72) !important;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px -4px black;
+
+  padding-bottom: 0;
+  display: flex;
+  align-content: center;
+}
+
+.active-link {
+  border-left: 2px solid #c2185b;
+  background: var(--bs-dark);
+
+}
+
+
+

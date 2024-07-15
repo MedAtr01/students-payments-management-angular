@@ -1,0 +1,98 @@
+<div class="mat-primary  mx-md-3 my-5">
+  <div class="d-flex mb-2 pb-0 flex-md-row flex-column align-items-md-center">
+    <button mat-raised-button color="primary" (click)="openDialogue()" class="ms-md-auto">
+      <mat-icon matPrefix>add</mat-icon>
+      New Payment
+    </button>
+    <span class="spacer flex-grow-1"></span>
+    <app-search-box class=" my-3"></app-search-box>
+
+
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        {{ studentCode }}
+        's Payments
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="table-container">
+        <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="paymentId">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> ID</th>
+            <td mat-cell *matCellDef="let payment"> {{ payment.paymentId }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="paymentDate">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Date</th>
+            <td mat-cell *matCellDef="let payment"> {{ payment.paymentDate }}</td>
+          </ng-container>
+          <ng-container matColumnDef="amount">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Amount</th>
+            <td mat-cell *matCellDef="let payment"> {{ payment.amount }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="paymentType">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Type</th>
+            <td mat-cell *matCellDef="let payment"> {{ payment.paymentType }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="paymentStatus">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let payment"> {{ payment.paymentStatus }}</td>
+          </ng-container>
+          <ng-container matColumnDef="paymentFile">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> File</th>
+            <td mat-cell *matCellDef="let payment" class="ps-md-0">
+              <button mat-icon-button color="primary"
+                      (click)="openFile(payment.paymentId)">
+                <mat-icon>receipt_long</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="validation">
+
+            <th mat-header-cell *matHeaderCellDef id="thId" class="ps-md-4"
+            >
+              <div class="ms-5  d-none d-md-block"></div>
+
+
+              Actions
+            </th>
+            <td mat-cell *matCellDef="let payment" class="ps-md-0">
+
+              <button mat-icon-button class="text-danger " (click)="updateStatus(payment.paymentId,'REJECTED')">
+                <mat-icon>close</mat-icon>
+              </button>
+              <button mat-icon-button class="text-success " (click)="updateStatus(payment.paymentId,'VALIDATED')">
+                <mat-icon>done</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="actions">
+
+            <th mat-header-cell *matHeaderCellDef class="text-center"
+            >
+              Actions
+            </th>
+            <td mat-cell *matCellDef="let element" class="text-center">
+              <button mat-icon-button class="text-danger" (click)="onDeletePayment(element.paymentId)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+      <mat-paginator [pageSizeOptions]="[6]"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>

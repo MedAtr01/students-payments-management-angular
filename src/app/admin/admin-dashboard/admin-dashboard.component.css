@@ -1,0 +1,77 @@
+/*!* admin-dashboard.component.css *!*/
+/*.chart-container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  !*margin: 20px;*!*/
+/*}*/
+
+
+/*.program-stats-container {*/
+/*  margin-top: 20px;*/
+/*}*/
+
+/*table {*/
+/*  width: 100%;*/
+/*  border-collapse: collapse;*/
+/*}*/
+
+/*th, td {*/
+/*  border: 1px solid #ddd;*/
+/*  padding: 8px;*/
+/*}*/
+
+/*th {*/
+/*  background-color: #f2f2f2;*/
+/*  text-align: left;*/
+/*}*/
+
+/*canvas, .cards {*/
+/*  background: #262830 !important;*/
+/*  border-radius: 10px;*/
+/*  padding: 20px;*/
+/*}*/
+
+.chart {
+  background: rgba(35, 38, 44, 0.72) !important;
+  border-radius: 10px;
+  padding: 20px;
+  height: 40vh;
+  /*box-shadow: var(--mat-autocomplete-container-elevation-shadow) !important;*/
+  box-shadow: rgba(13, 13, 14, 0.83) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.stat-cards {
+  height: 40vh;
+}
+
+.stat-card {
+  /*height: 20vh;*/
+  display: flex;
+  flex-direction: column;
+  /*margin-bottom: 1rem;*/
+  align-items: center !important;
+  /*text-align: center;*/
+  /*background: #272a31 !important;*/
+  background: rgba(35, 38, 44, 0.72) !important;
+  border-radius: 10px;
+  box-shadow: rgba(13, 13, 14, 0.83) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  /*!*padding-bottom: 0;*!*/
+
+
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  height: 100% !important;
+  width: 100% !important;
+  padding: 10px;
+}
+
+

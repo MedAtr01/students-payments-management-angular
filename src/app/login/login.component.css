@@ -1,0 +1,40 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+mat-card {
+
+  width: 100%;
+  max-width: 400px;
+  padding: 60px;
+
+}
+
+mat-card-title, mat-card-footer {
+  color: var(--bs-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+
+}
+
+mat-icon {
+  font-size: 24px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  color: var(--bs-secondary);
+}
+
+.mdc-button {
+  width: 100%;
+}
