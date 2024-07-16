@@ -4,7 +4,7 @@
   border-radius: 10px;
   padding: 20px;
   height: 40vh;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 3px 4px;
 }
 
 .stat-cards {
@@ -12,13 +12,13 @@
 }
 
 .stat-card {
-  /*height: 20vh;*/
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center !important;
   background: rgba(35, 38, 44, 0.72) !important;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 3px 4px;
 
 
 }
