@@ -100,7 +100,7 @@ mat-card-content {
 
 canvas {
   height: 100% !important;
-  width: 100% !important;
+  width: auto !important;
   padding: 10px;
 }
 
