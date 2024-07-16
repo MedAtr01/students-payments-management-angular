@@ -29,7 +29,7 @@ mat-mdc-form-field {
 }
 
 .mat-mdc-card, .mat-card {
-  box-shadow: var(--mat-autocomplete-container-elevation-shadow);
+  box-shadow: var(--mdc-elevated-card-container-elevation);
 
 }
 
@@ -83,7 +83,7 @@ mat-toolbar {
 
 .mat-drawer-side {
   border: none !important;
-  box-shadow: var(--mat-sidenav-container-elevation-shadow) !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 3px 0 15px -3px !important;
 
 }
 
