@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Title} from "@angular/platform-browser";
+import {PaymentsComponent} from "../payments/payments.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +11,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
+
+  protected readonly PaymentsComponent = PaymentsComponent;
 }
