@@ -33,7 +33,6 @@ export class AdminDashboardComponent implements OnInit {
   ];
   public barChartLegend = true;
   public barChartPlugins = [];
-
   public doughnutChartLabels: string[] = ['Validated Payments', 'Rejected Payments', 'Pending Payments'];
   public doughnutChartDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] = [
     {
@@ -127,7 +126,7 @@ export class AdminDashboardComponent implements OnInit {
     this.lineChartLabels = this.programs;
     this.lineChartDatasets[0].data = this.programs.map(program => this.revenueByProgram[program]);
 
-    
+
   }
 
 }

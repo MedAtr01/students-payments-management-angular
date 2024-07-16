@@ -1,5 +1,5 @@
 <div class="dashboard container mx-auto mt-5">
-  <!--  <div class="stats  d-flex align-items-center flex-wrap justify-content-start ">-->
+  <!--  -->
   <!--    <mat-card class="stat-card col-md-4 me-md-4 col-7 total">-->
   <!--      <mat-card-title>-->
   <!--        {{ paymentsComponent.totalPayments }}-->
@@ -49,53 +49,54 @@
   <!--    </mat-card>-->
 
   <!--  </div>-->
-  <div class="mx-md-4 d-flex flex-column flex-md-row  justify-content-center">
-    <div class="ms-md-3 stat-cards col-md-4 justify-content-start p-0 d-flex flex-wrap">
-      <div class="container d-flex flex-row ps-0 mb-2">
-        <div class="col-7 me-2 text-center  stat-card">
-          <h1>
-            {{ paymentsComponent.totalPayments }}
-            <mat-icon class="text-primary ms-1 fw-bolder">call_received</mat-icon>
-          </h1>
-          <h3>
-            Total
-          </h3>
-        </div>
-        <div class="col-5 mx-0 text-center  stat-card">
-          <h1>
-            {{ paymentsComponent.validatedPayments }}
-            <mat-icon class="text-success ms-1 fw-bolder">done</mat-icon>
-          </h1>
-          <h3>
-            Valid
-          </h3>
-        </div>
-      </div>
-      <div class="container d-flex flex-row ps-0">
-        <div class="col-5 me-2 text-center  stat-card">
-          <h1>
-            {{ paymentsComponent.rejectedPayments }}
-            <mat-icon class="text-danger ms-1 fw-bolder">close</mat-icon>
-          </h1>
-          <h3>
-            Reject
-          </h3>
-        </div>
-        <div class="col-7 mx-0 text-center  stat-card">
-          <div class="d-flex">
+  <div class="stats  d-flex align-items-center flex-wrap justify-content-start ">
+    <div class="mx-md-4 d-flex flex-column flex-md-row  justify-content-center">
+      <div class="ms-md-3 stat-cards col-md-4 justify-content-start p-0 d-flex flex-wrap">
+        <div class="container d-flex flex-row ps-0 mb-2">
+          <div class="col-7 me-2 text-center  stat-card">
             <h1>
-              {{ paymentsComponent.pendingPayments }}
-
+              {{ paymentsComponent.totalPayments }}
+              <mat-icon class="text-primary ms-1 fw-bolder">call_received</mat-icon>
             </h1>
-            <mat-icon class="text-warning ms-1 fs-4 mt-1 fw-bolder">hourglass_empty</mat-icon>
+            <h3>
+              Total
+            </h3>
           </div>
-          <h3>
-            Pending
-          </h3>
+          <div class="col-5 mx-0 text-center  stat-card">
+            <h1>
+              {{ paymentsComponent.validatedPayments }}
+              <mat-icon class="text-success ms-1 fw-bolder">done</mat-icon>
+            </h1>
+            <h3>
+              Valid
+            </h3>
+          </div>
+        </div>
+        <div class="container d-flex flex-row ps-0">
+          <div class="col-5 me-2 text-center  stat-card">
+            <h1>
+              {{ paymentsComponent.rejectedPayments }}
+              <mat-icon class="text-danger ms-1 fw-bolder">close</mat-icon>
+            </h1>
+            <h3>
+              Reject
+            </h3>
+          </div>
+          <div class="col-7 mx-0 text-center  stat-card">
+            <div class="d-flex">
+              <h1>
+                {{ paymentsComponent.pendingPayments }}
+
+              </h1>
+              <mat-icon class="text-warning ms-1 fs-4 mt-1 fw-bolder">hourglass_empty</mat-icon>
+            </div>
+            <h3>
+              Pending
+            </h3>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="chart doughnut ms-md-3 col-md-4 d-flex justify-content-center">
       <canvas baseChart
               [datasets]="paymentsComponent.doughnutChartDatasets"
