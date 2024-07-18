@@ -1,5 +1,7 @@
 <mat-sidenav-container autosize>
-  <mat-sidenav class="d-flex flex-column" #sidenav [opened]="true" cdkScrollable="false"
+  <mat-sidenav class="d-flex flex-column" #sidenav
+               [opened]="document.getElementsByTagName('html')[0].clientWidth > 520 ? 'true':'false'"
+               cdkScrollable="false"
                [mode]="document.getElementsByTagName('html')[0].clientWidth > 520 ? 'side':'over'"
   >
     <div class="d-flex mb-3">
