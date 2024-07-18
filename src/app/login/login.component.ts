@@ -67,7 +67,6 @@ export class LoginComponent implements OnInit {
             this.loadStudent();
             this.router.navigate(['student']);
           } else if (roles.includes('ADMIN')) {
-            console.log(decodedToken);
             this.router.navigate(['admin']);
           }
         },
