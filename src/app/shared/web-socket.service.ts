@@ -15,7 +15,6 @@ export class WebSocketService {
     const socket = new SockJS(`${environment.rootUrl}/ws`);
     this.stompClient = new Client({
       webSocketFactory: () => socket,
-      debug: (str) => console.log(str),
       reconnectDelay: 5000, // Auto reconnect every 5 seconds
     });
   }

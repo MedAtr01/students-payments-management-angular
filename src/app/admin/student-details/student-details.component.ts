@@ -106,7 +106,7 @@ export class StudentDetailsComponent implements OnInit {
             duration: 3000,
             panelClass: ['success-snackbar']
           })
-          console.log('Student updated successfully:', response)
+      
         },
         error: (err) => {
           this.snackBar.open('Error updating student', 'Close', {

@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
           const token = response.token;
           this.tokenService.setToken(token as string);
           const decodedToken = this.jwtHelper.decodeToken(token as string);
-          console.log(decodedToken);
+
           const roles = decodedToken.authorities;
           if (roles.includes('USER')) {
             this.loadStudent();

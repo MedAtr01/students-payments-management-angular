@@ -93,7 +93,7 @@ export class ProfileComponent implements OnInit {
     this.studentDataService.loadStudent().subscribe(student => {
       if (student) {
         this.student = student;
-        this.updateGroup.patchValue({
+        this.updateGroup?.patchValue({
           fullName: this.student.fullName,
           studentCode: this.student.studentCode,
           program: this.student.program,
@@ -143,7 +143,7 @@ export class ProfileComponent implements OnInit {
             duration: 3000,
             panelClass: ['success-snackbar']
           })
-          console.log('Student updated successfully:', response)
+
 
         },
         error: (err) => {

@@ -4,8 +4,8 @@
   <div class="image-container d-flex">
     <form [formGroup]="profileGroup" enctype="multipart/form-data">
       <label class="hoverable " for="fileInput">
-        <img *ngIf="student.profile!=undefined && !url else defaultImage"
-             [src]="'data:image/jpeg;base64,'+student.profile" class="shadow"
+        <img *ngIf="student!.profile !=undefined && !url else defaultImage"
+             [src]="'data:image/jpeg;base64,'+student.profile!" class="mat-elevation-z5"
         >
         <ng-template #defaultImage>
           <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
