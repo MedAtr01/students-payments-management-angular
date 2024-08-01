@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  rootUrl: 'http://35.180.32.250:8020'
+  rootUrl: 'http://13.38.93.26 :8020'
 };
